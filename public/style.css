@@ -1,0 +1,160 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full height container but no forced extra space */
+body, html {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafc;
+  color: #333;
+}
+
+/* Wrapper */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Slogan */
+.slogan h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #007bff;
+}
+.slogan p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Form */
+.chat-form textarea {
+  resize: none;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+.chat-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+.chat-form button {
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* Cards */
+.card {
+  border-radius: 16px;
+  border: none;
+  background: #fff;
+}
+.card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Table */
+.table th {
+  background: #f1f4f9;
+}
+.phrase {
+  font-weight: 600;
+  margin-right: 8px;
+}
+.reason {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Daily stats */
+#daily-stats-container .card {
+  background: #f9f9ff;
+  border-left: 4px solid #007bff;
+}
+
+/* Smooth fade-in for hidden → visible */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale-up animation for harmfulness boxes */
+.scale-in {
+  animation: scaleIn 0.4s ease forwards;
+}
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Daily stats card fade-in */
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: cardFade 0.6s ease forwards;
+}
+@keyframes cardFade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover effect on daily stats card */
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Smooth transition for table rows */
+#harmful-table tr {
+  opacity: 0;
+  animation: rowFade 0.5s ease forwards;
+}
+@keyframes rowFade {
+  from { opacity: 0; transform: translateX(-15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Container for each harmful phrase */
+.harmful-container {
+  display: flex;
+  flex-direction: column; /* stack phrase + reason */
+  gap: 4px;
+}
+
+/* Phrase with colored background */
+.phrase-box {
+  display: inline-block;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+/* Level badge */
+.level {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Reason text */
+.reason {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.3;
+}

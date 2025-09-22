@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Harmful Message Analysis</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Slogan (hidden after first submit) -->
+    <div id="slogan" class="slogan text-center mb-4">
+      <h2>"Write with kindness, connect with respect."</h2>
+      <p class="text-muted">Enter your message below to see how respectful it is.</p>
+    </div>
+
+    <!-- Chat Form -->
+    <form id="chat-form" class="chat-form">
+      <textarea
+        id="chat-input"
+        class="form-control"
+        rows="3"
+        placeholder="Type your message..."
+      ></textarea>
+      <button type="submit" class="btn btn-primary mt-2 w-100">Analyze</button>
+    </form>
+
+    <!-- Response Section (hidden until submit) -->
+    <div id="response-container" class="d-none mt-4">
+      <!-- Harmfulness Scale -->
+      <div class="card mb-4 p-3 shadow-sm">
+        <h5>Harmfulness Levels (1 → 10)</h5>
+        <div id="harmfulness-scale" class="d-flex justify-content-between"></div>
+        <small class="d-flex justify-content-between mt-1">
+          <span>1 (Low)</span>
+          <span>10 (High)</span>
+        </small>
+      </div>
+
+      <!-- Original Message Table -->
+      <div class="card mb-4 p-3 shadow-sm">
+        <h5>Detected Harmful Phrases</h5>
+        <table id="harmful-table" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Phrase & Reason</th>
+              <th>Alternate Phrase</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- Rewritten Message -->
+      <div class="card mb-4 p-3 shadow-sm">
+        <h5>Rewritten Message</h5>
+        <p id="rewritten-message" style="font-size:1.1rem;"></p>
+      </div>
+
+      <!-- Daily Stats -->
+    </div>
+    <div class="card my-4 p-3 shadow-sm">
+      <h5>Daily Usage Stats (last 30 days)</h5>
+      <div id="daily-stats-container"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>feather.replace();</script>
+</body>
+
+</html>
